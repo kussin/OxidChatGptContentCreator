@@ -48,6 +48,8 @@ $aModule = array(
         'chatgpt_popup' => Kussin\ChatGpt\Controller\ChatGPTPopup::class,
         'chatgpt_preview' => Kussin\ChatGpt\Controller\ChatGPTPreview::class,
         'process' => Kussin\ChatGpt\Cron\Process::class,
+        'chatgpt_weight' => Kussin\ChatGpt\Cron\ChatGPTWeight::class,
+        'chatgpt_weight_range' => Kussin\ChatGpt\Controller\Admin\CategoryWeightSettings::class,
     ),
 
     'templates' => array(
@@ -65,6 +67,9 @@ $aModule = array(
 
         // IFRAME
         'chatgpt_preview.tpl' => 'kussin/chatgpt-content-creator/views/tpl/chatgpt_preview.tpl',
+
+        // WEIGHT RANGE
+        'chatgpt_weightrange.tpl' => 'kussin/chatgpt-content-creator/views/tpl/admin/chatgpt_weightrange.tpl',
     ),
 
     'blocks' => array(
@@ -228,6 +233,12 @@ $aModule = array(
             'value' => Prompt::load()->get('OPTIMIZE_CONTENT', 'en_US'),
         ),
         array(
+            'group' => 'sKussinChatGptPromptSettings',
+            'name' => 'sKussinChatGptPromptWeight',
+            'type' => 'str',
+            'value' => 'Return the weight of the item "%s" by "%s" as a floating-point number in kilograms only, without any additional text or units. Answer only with the number and use `%s` if no plausible weight can be determined. The weight is plausible if it is between `%s` and `%s`. - FYI: The item is assigned to the following category or has the category path "%s".',
+        ),
+        array(
             'group' => 'sKussinChatGptProcessSettings',
             'name' => 'blKussinChatGptProcessQueueEnabled',
             'type' => 'bool',
@@ -287,6 +298,19 @@ $aModule = array(
             'name' => 'blKussinChatGptProcessQueueAutoApprovedEnabled',
             'type' => 'bool',
             'value' => 0,
+        ),
+        array(
+            'group' => 'sKussinChatGptWeightSettings',
+            'name' => 'sKussinChatGptWeightQueryTimestamp',
+            'type' => 'str',
+            'value' => '2025-01-01 00:00:00',
+        ),
+        array(
+            //HIDDEN SETTING
+            //'group' => 'sKussinChatGptWeightSettings',
+            'name' => 'sKussinCategoryWeightRanges',
+            'type' => 'str',
+            'value' => '{"Water\/Wake\/Wakeboards":{"min":4,"max":6,"default":5}}',
         ),
         array(
             'group' => 'sKussinChatGptDebugSettings',

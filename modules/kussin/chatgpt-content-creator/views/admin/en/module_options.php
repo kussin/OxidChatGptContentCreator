@@ -33,6 +33,7 @@ $aLang = array(
     'SHOP_MODULE_sKussinChatGptPromptProductAttributesEN' => 'Prompt for article attributes (English)',
     'SHOP_MODULE_sKussinChatGptPromptOptimizeContentDE' => 'Prompt for optimize content (German)',
     'SHOP_MODULE_sKussinChatGptPromptOptimizeContentEN' => 'Prompt for optimize content (English)',
+    'SHOP_MODULE_sKussinChatGptPromptWeight' => 'Prompt for article weight (oxweight)',
 
     'SHOP_MODULE_GROUP_sKussinChatGptProcessSettings' => 'Process queue settings',
     'SHOP_MODULE_blKussinChatGptProcessQueueEnabled' => 'Enable debug mode',
@@ -50,6 +51,10 @@ $aLang = array(
     'SHOP_MODULE_iKussinChatGptProcessLimitMaxReplacements' => 'Max. data rows to replace with ai content',
     'SHOP_MODULE_sKussinChatGptProcessProductAttributesForbiddenValues' => 'Comma-separated list of forbidden attribute values',
     'SHOP_MODULE_blKussinChatGptProcessQueueAutoApprovedEnabled' => 'Enable auto publish for process queue',
+
+    'SHOP_MODULE_GROUP_sKussinChatGptWeightSettings' => 'Weight settings',
+    'SHOP_MODULE_sKussinChatGptWeightQueryTimestamp' => 'Select query start date',
+    'SHOP_MODULE_sKussinCategoryWeightRanges' => 'Category weight range',
 
     'SHOP_MODULE_GROUP_sKussinChatGptDebugSettings' => 'Debug settings',
     'SHOP_MODULE_blKussinChatGptDebugEnabled' => 'Enable debug mode',

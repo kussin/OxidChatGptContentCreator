@@ -11,6 +11,8 @@ use OxidEsales\Eshop\Core\Field;
 use OxidEsales\Eshop\Core\Registry;
 use QuneMedia\ChatGpt\Prompts\LanguageMapper;
 use QuneMedia\ChatGpt\Prompts\Prompt;
+use \Kussin\ChatGpt\Traits\WeightGeneratorTrait;
+
 
 class ArticleMain extends ArticleMain_parent
 {
@@ -18,9 +20,19 @@ class ArticleMain extends ArticleMain_parent
     use ChatGPTClientTrait;
     use LanguageTrait;
     use LoggerTrait;
+    use WeightGeneratorTrait;
 
     private $_oArticle = null;
 
+    public function save()
+    {
+        parent::save();
+
+        $iWeight = (float) $this->_kussinLoadArticle()->oxarticles__oxweight->value;
+        if ($iWeight <= 0) {
+            $this->kussinchatgptweight();
+        }
+    }
     private function _kussinLoadArticle()
     {
         if ($this->_oArticle === null) {

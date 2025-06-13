@@ -9,6 +9,7 @@
         <MAINMENU id="KUSSIN_CHATGPT_CONTENT_CREATOR">
             <SUBMENU id="KUSSIN_CHATGPT_BULK_APPROVAL" cl="chatgpt_bulk_approval" />
             <SUBMENU id="KUSSIN_CHATGPT_EXPORTER" cl="chatgpt_exporter" />
+            <SUBMENU id="KUSSIN_CHATGPT_WEIGHT_RANGE" cl="chatgpt_weight_range" />
         </MAINMENU>
     </OXMENU>
 </OX>

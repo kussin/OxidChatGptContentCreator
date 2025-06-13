@@ -82,4 +82,9 @@ $aLang = array(
     'KUSSIN_CHATGPT_POPUP_REGENERATE_CONTENT' => 'Regenerate content',
     'KUSSIN_CHATGPT_POPUP_OPTIMIZE_CONTENT' => 'Optimize content',
     'KUSSIN_CHATGPT_POPUP_APPROVE_CONTENT' => 'Approve content',
+    'KUSSIN_CHATGPT_WEIGHT_RANGE' => 'Category Weight Range',
+    'KUSSIN_CHATGPT_CATEGORY_PATH' => 'Category Path',
+    'KUSSIN_CHATGPT_CATEGORY_MIN_WEIGHT' => 'Min Weight',
+    'KUSSIN_CHATGPT_CATEGORY_MAX_WEIGHT' => 'Max Weight',
+    'KUSSIN_CHATGPT_CATEGORY_DEFAULT_WEIGHT' => 'Default Weight',
 );
