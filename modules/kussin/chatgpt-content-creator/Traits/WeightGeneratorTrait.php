@@ -18,6 +18,17 @@ trait WeightGeneratorTrait
         $sCategoryPath = $this->getArticleCategoryPath($oArticle);
         $aRange = $this->getCategoryWeightRange($sCategoryPath);
 
+        // Load title
+        $sTitle = $oArticle->oxarticles__oxtitle->value;
+
+        // Check if variant
+        if ($oArticle->oxarticles__oxparentid->value) {
+            $oParent = oxNew(\OxidEsales\Eshop\Application\Model\Article::class);
+            if ($oParent->load($oArticle->oxarticles__oxparentid->value)) {
+                $sTitle = trim($oParent->oxarticles__oxtitle->value . ' size:' . $oArticle->oxarticles__oxvarselect->value);
+            }
+        }
+
         if ($sPrompt == '') {
             // FALLBACK
             $sPrompt = 'Return the weight of the item "%s" by "%s" as a floating-point number in kilograms only, without any additional text or units. Answer only with the number and use `%s` if no plausible weight can be determined. The weight is plausible if it is between `%s` and `%s`. - FYI: The item is assigned to the following category or has the category path "%s".';
@@ -35,7 +46,7 @@ trait WeightGeneratorTrait
 
         $sPrompt = sprintf(
             $sPrompt,
-            $oArticle->oxarticles__oxtitle->value,
+            $sTitle,
             $oArticle->getManufacturer()->oxmanufacturers__oxtitle->value,
             $aRange['default'],
             $aRange['min'],
