@@ -77,6 +77,14 @@ Email: info@kussin.de
 
 * [Radu Lepadatu](https://github.com/Radulepy) for creating [`Radulepy/PHP-ChatGPT`](hhttps://github.com/Radulepy/PHP-ChatGPT/)
 
+## About Kussin
+
+This module is developed and maintained by Kussin | eCommerce und
+Online-Marketing GmbH, an experienced OXID eShop agency and
+eCommerce development company.
+
+Learn more about our [OXID eShop development and agency services](https://www.kussin.de/oxid-agentur/).
+
 ## Copyright
 
 &copy; 2006-2024 Kussin | eCommerce und Online-Marketing GmbH
